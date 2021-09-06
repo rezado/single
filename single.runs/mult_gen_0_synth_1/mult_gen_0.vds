@@ -1,0 +1,283 @@
+#-----------------------------------------------------------
+# Vivado v2016.2 (64-bit)
+# SW Build 1577090 on Thu Jun  2 16:32:40 MDT 2016
+# IP Build 1577682 on Fri Jun  3 12:00:54 MDT 2016
+# Start of session at: Mon Sep 06 18:43:50 2021
+# Process ID: 11100
+# Current directory: D:/Codes/Vivado/2016/single/single.runs/mult_gen_0_synth_1
+# Command line: vivado.exe -log mult_gen_0.vds -mode batch -messageDb vivado.pb -notrace -source mult_gen_0.tcl
+# Log file: D:/Codes/Vivado/2016/single/single.runs/mult_gen_0_synth_1/mult_gen_0.vds
+# Journal file: D:/Codes/Vivado/2016/single/single.runs/mult_gen_0_synth_1\vivado.jou
+#-----------------------------------------------------------
+source mult_gen_0.tcl -notrace
+Command: synth_design -top mult_gen_0 -part xc7a100tcsg324-1 -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 5152 
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:08 ; elapsed = 00:00:12 . Memory (MB): peak = 330.715 ; gain = 123.309
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'mult_gen_0' [d:/Codes/Vivado/2016/single/single.srcs/sources_1/ip/mult_gen_0/synth/mult_gen_0.vhd:67]
+WARNING: [Synth 8-5640] Port 'zero_detect' is missing in component declaration [d:/Codes/Vivado/2016/single/single.srcs/sources_1/ip/mult_gen_0/synth/mult_gen_0.vhd:70]
+WARNING: [Synth 8-5640] Port 'pcasc' is missing in component declaration [d:/Codes/Vivado/2016/single/single.srcs/sources_1/ip/mult_gen_0/synth/mult_gen_0.vhd:70]
+INFO: [Synth 8-3491] module 'mult_gen_v12_0_11' declared at 'd:/Codes/Vivado/2016/single/single.srcs/sources_1/ip/mult_gen_0/mult_gen_v12_0_11/hdl/mult_gen_v12_0.vhd:54' bound to instance 'U0' of component 'mult_gen_v12_0_11' [d:/Codes/Vivado/2016/single/single.srcs/sources_1/ip/mult_gen_0/synth/mult_gen_0.vhd:113]
+INFO: [Synth 8-256] done synthesizing module 'mult_gen_0' (6#1) [d:/Codes/Vivado/2016/single/single.srcs/sources_1/ip/mult_gen_0/synth/mult_gen_0.vhd:67]
+WARNING: [Synth 8-3331] design delay_line__parameterized7 has unconnected port CLK
+WARNING: [Synth 8-3331] design delay_line__parameterized7 has unconnected port CE
+WARNING: [Synth 8-3331] design delay_line__parameterized7 has unconnected port SCLR
+WARNING: [Synth 8-3331] design delay_line__parameterized6 has unconnected port CLK
+WARNING: [Synth 8-3331] design delay_line__parameterized6 has unconnected port CE
+WARNING: [Synth 8-3331] design delay_line__parameterized6 has unconnected port SCLR
+WARNING: [Synth 8-3331] design delay_line__parameterized5 has unconnected port CLK
+WARNING: [Synth 8-3331] design delay_line__parameterized5 has unconnected port CE
+WARNING: [Synth 8-3331] design delay_line__parameterized5 has unconnected port SCLR
+WARNING: [Synth 8-3331] design delay_line__parameterized4 has unconnected port CLK
+WARNING: [Synth 8-3331] design delay_line__parameterized4 has unconnected port CE
+WARNING: [Synth 8-3331] design delay_line__parameterized4 has unconnected port SCLR
+WARNING: [Synth 8-3331] design delay_line__parameterized3 has unconnected port CLK
+WARNING: [Synth 8-3331] design delay_line__parameterized3 has unconnected port CE
+WARNING: [Synth 8-3331] design delay_line__parameterized3 has unconnected port SCLR
+WARNING: [Synth 8-3331] design delay_line__parameterized2 has unconnected port CLK
+WARNING: [Synth 8-3331] design delay_line__parameterized2 has unconnected port CE
+WARNING: [Synth 8-3331] design delay_line__parameterized2 has unconnected port SCLR
+WARNING: [Synth 8-3331] design delay_line__parameterized1 has unconnected port CLK
+WARNING: [Synth 8-3331] design delay_line__parameterized1 has unconnected port CE
+WARNING: [Synth 8-3331] design delay_line__parameterized1 has unconnected port SCLR
+WARNING: [Synth 8-3331] design delay_line has unconnected port CLK
+WARNING: [Synth 8-3331] design delay_line has unconnected port CE
+WARNING: [Synth 8-3331] design delay_line has unconnected port SCLR
+WARNING: [Synth 8-3331] design delay_line__parameterized0 has unconnected port CLK
+WARNING: [Synth 8-3331] design delay_line__parameterized0 has unconnected port CE
+WARNING: [Synth 8-3331] design delay_line__parameterized0 has unconnected port SCLR
+WARNING: [Synth 8-3331] design dsp has unconnected port D_PORT[24]
+WARNING: [Synth 8-3331] design dsp has unconnected port D_PORT[23]
+WARNING: [Synth 8-3331] design dsp has unconnected port D_PORT[22]
+WARNING: [Synth 8-3331] design dsp has unconnected port D_PORT[21]
+WARNING: [Synth 8-3331] design dsp has unconnected port D_PORT[20]
+WARNING: [Synth 8-3331] design dsp has unconnected port D_PORT[19]
+WARNING: [Synth 8-3331] design dsp has unconnected port D_PORT[18]
+WARNING: [Synth 8-3331] design dsp has unconnected port D_PORT[17]
+WARNING: [Synth 8-3331] design dsp has unconnected port D_PORT[16]
+WARNING: [Synth 8-3331] design dsp has unconnected port D_PORT[15]
+WARNING: [Synth 8-3331] design dsp has unconnected port D_PORT[14]
+WARNING: [Synth 8-3331] design dsp has unconnected port D_PORT[13]
+WARNING: [Synth 8-3331] design dsp has unconnected port D_PORT[12]
+WARNING: [Synth 8-3331] design dsp has unconnected port D_PORT[11]
+WARNING: [Synth 8-3331] design dsp has unconnected port D_PORT[10]
+WARNING: [Synth 8-3331] design dsp has unconnected port D_PORT[9]
+WARNING: [Synth 8-3331] design dsp has unconnected port D_PORT[8]
+WARNING: [Synth 8-3331] design dsp has unconnected port D_PORT[7]
+WARNING: [Synth 8-3331] design dsp has unconnected port D_PORT[6]
+WARNING: [Synth 8-3331] design dsp has unconnected port D_PORT[5]
+WARNING: [Synth 8-3331] design dsp has unconnected port D_PORT[4]
+WARNING: [Synth 8-3331] design dsp has unconnected port D_PORT[3]
+WARNING: [Synth 8-3331] design dsp has unconnected port D_PORT[2]
+WARNING: [Synth 8-3331] design dsp has unconnected port D_PORT[1]
+WARNING: [Synth 8-3331] design dsp has unconnected port D_PORT[0]
+WARNING: [Synth 8-3331] design dsp has unconnected port CARRY_IN
+WARNING: [Synth 8-3331] design mult_gen_v12_0_11_viv has unconnected port CE
+WARNING: [Synth 8-3331] design mult_gen_v12_0_11_viv has unconnected port SCLR
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:11 ; elapsed = 00:00:15 . Memory (MB): peak = 368.242 ; gain = 160.836
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:11 ; elapsed = 00:00:16 . Memory (MB): peak = 368.242 ; gain = 160.836
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a100tcsg324-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:11 ; elapsed = 00:00:16 . Memory (MB): peak = 368.242 ; gain = 160.836
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:16 . Memory (MB): peak = 377.492 ; gain = 170.086
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+Start Parallel Synthesis Optimization  : Time (s): cpu = 00:00:14 ; elapsed = 00:00:19 . Memory (MB): peak = 486.586 ; gain = 279.180
+---------------------------------------------------------------------------------
+Start Cross Boundary Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-3331] design mult_gen_v12_0_11_viv has unconnected port CE
+WARNING: [Synth 8-3331] design mult_gen_v12_0_11_viv has unconnected port SCLR
+---------------------------------------------------------------------------------
+Finished Cross Boundary Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:19 . Memory (MB): peak = 486.586 ; gain = 279.180
+---------------------------------------------------------------------------------
+Finished Parallel Reinference  : Time (s): cpu = 00:00:14 ; elapsed = 00:00:19 . Memory (MB): peak = 486.586 ; gain = 279.180
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Area Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Area Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:19 . Memory (MB): peak = 486.586 ; gain = 279.180
+---------------------------------------------------------------------------------
+Finished Parallel Area Optimization  : Time (s): cpu = 00:00:14 ; elapsed = 00:00:19 . Memory (MB): peak = 486.586 ; gain = 279.180
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:19 . Memory (MB): peak = 486.586 ; gain = 279.180
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:14 ; elapsed = 00:00:19 . Memory (MB): peak = 488.758 ; gain = 281.352
+---------------------------------------------------------------------------------
+Finished Parallel Technology Mapping Optimization  : Time (s): cpu = 00:00:14 ; elapsed = 00:00:19 . Memory (MB): peak = 488.758 ; gain = 281.352
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+Finished Parallel Synthesis Optimization  : Time (s): cpu = 00:00:14 ; elapsed = 00:00:19 . Memory (MB): peak = 488.758 ; gain = 281.352
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:14 ; elapsed = 00:00:20 . Memory (MB): peak = 488.758 ; gain = 281.352
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:14 ; elapsed = 00:00:20 . Memory (MB): peak = 488.758 ; gain = 281.352
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:14 ; elapsed = 00:00:20 . Memory (MB): peak = 488.758 ; gain = 281.352
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:14 ; elapsed = 00:00:20 . Memory (MB): peak = 488.758 ; gain = 281.352
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:14 ; elapsed = 00:00:20 . Memory (MB): peak = 488.758 ; gain = 281.352
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:14 ; elapsed = 00:00:20 . Memory (MB): peak = 488.758 ; gain = 281.352
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+--------+------+
+|      |Cell    |Count |
++------+--------+------+
+|1     |DSP48E1 |     4|
++------+--------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:14 ; elapsed = 00:00:20 . Memory (MB): peak = 488.758 ; gain = 281.352
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 59 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 488.758 ; gain = 241.480
+Synthesis Optimization Complete : Time (s): cpu = 00:00:14 ; elapsed = 00:00:20 . Memory (MB): peak = 488.758 ; gain = 281.352
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 4 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+12 Infos, 59 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 561.352 ; gain = 314.074
+INFO: [Coretcl 2-1174] Renamed 3 cell refs.
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+write_checkpoint: Time (s): cpu = 00:00:12 ; elapsed = 00:00:15 . Memory (MB): peak = 926.723 ; gain = 365.371
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.068 . Memory (MB): peak = 926.723 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Mon Sep 06 18:44:30 2021...

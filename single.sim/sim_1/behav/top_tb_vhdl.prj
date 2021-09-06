@@ -1,0 +1,13 @@
+# compile vhdl design source files
+vhdl xpm  "D:/Xilinx/Vivado/2016.2/data/ip/xpm/xpm_VCOMP.vhd"
+vhdl xbip_utils_v3_0_6  "../../../single.ip_user_files/ipstatic/xbip_utils_v3_0_6/hdl/xbip_utils_v3_0_vh_rfs.vhd"
+vhdl xbip_pipe_v3_0_2  "../../../single.ip_user_files/ipstatic/xbip_pipe_v3_0_2/hdl/xbip_pipe_v3_0_vh_rfs.vhd"
+vhdl xbip_pipe_v3_0_2  "../../../single.ip_user_files/ipstatic/xbip_pipe_v3_0_2/hdl/xbip_pipe_v3_0.vhd"
+vhdl xbip_bram18k_v3_0_2  "../../../single.ip_user_files/ipstatic/xbip_bram18k_v3_0_2/hdl/xbip_bram18k_v3_0_vh_rfs.vhd"
+vhdl xbip_bram18k_v3_0_2  "../../../single.ip_user_files/ipstatic/xbip_bram18k_v3_0_2/hdl/xbip_bram18k_v3_0.vhd"
+vhdl mult_gen_v12_0_11  "../../../single.ip_user_files/ipstatic/mult_gen_v12_0_11/hdl/mult_gen_v12_0_vh_rfs.vhd"
+vhdl mult_gen_v12_0_11  "../../../single.ip_user_files/ipstatic/mult_gen_v12_0_11/hdl/mult_gen_v12_0.vhd"
+vhdl xil_defaultlib  "../../../single.srcs/sources_1/ip/mult_gen_0/sim/mult_gen_0.vhd"
+
+# Do not sort compile order
+nosort
