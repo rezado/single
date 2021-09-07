@@ -12,8 +12,8 @@ module PCBranch(
 );
 wire [31:0] signleft_offset; //offset符号扩展 左移两位
 assign signleft_offset = {{14{offset[15]}}, offset, 2'b00};
-assign beqpc = zero ?  pcadd-4+signleft_offset : pcadd;
-assign bnepc = zero ? pcadd : pcadd-4+signleft_offset;
+assign beqpc = zero ?  pcadd+signleft_offset : pcadd+4;
+assign bnepc = zero ? pcadd+4 : pcadd+signleft_offset;
 assign jalpc = {pcadd[31], pcadd[30], pcadd[29], pcadd[28], instr_index[23:0], 2'b00};
 
 endmodule

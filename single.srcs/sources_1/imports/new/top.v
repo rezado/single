@@ -71,7 +71,7 @@ PCadd PCadd(
 	.newPC(nextpc)
 );
 PCBranch PCBranch(
-	.pcadd       (nextpc      ),
+	.pcadd       (PC_out      ),
 	.offset      (imm         ),
 	.zero        (zero        ),
 	.instr_index (instr_index ),
