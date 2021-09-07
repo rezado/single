@@ -31,12 +31,12 @@ module top(
 	output            rf_we, //寄存器堆写使能
 	output   [ 2:0]   sel_rf_dst, //寄存器堆写地址生成逻辑
 	output            sel_rf_res, //寄存器堆读地址生成逻辑
-	output   [ 3:0]   sel_nextpc, //PC输入生成逻辑
-	output   [ 1:0]   sel_beqbne, //BEQ BNE选择信号
+	output   [ 4:0]   sel_nextpc, //PC输入生成逻辑
 	//ALU
 	output	 [31:0]   alu_result, //ALU运算结果
 	output   [31:0]   alu_src1, //ALU操作数1
 	output   [31:0]   alu_src2, //ALU操作数2
+	output            zero, //零标志位
 	//Signextend
 	output   [31:0]   imm_ext, //指令码imm扩展32位
 	output   [31:0]   sa_ext, //移位sa扩展32位
@@ -53,12 +53,10 @@ module top(
     output   [31:0]   dr_addr, //DR读、写地址
 	output   [31:0]   dr_wdata, //DR写数据
 	output   [31:0]   dr_rdata, //DR读数据
-	output   [31:0]   dr_rdata_LTB, //DR小端转大端
-	//跳转信号
-	output            beq_bne_jump
+	output   [31:0]   dr_rdata_LTB //DR小端转大端
 );
 //PC跳转方式用
-wire  [31:0] nextpc, beqpc, jalpc;
+wire  [31:0] nextpc, beqpc, bnepc, jalpc;
 
 assign rf_raddr1 = rs;
 assign rf_raddr2 = rt;
@@ -73,26 +71,23 @@ PCadd PCadd(
 	.newPC(nextpc)
 );
 PCBranch PCBranch(
-	.pcadd(PC_out),
-	.offset(imm),
-	.beq_bne_jump(beq_bne_jump),
-	.instr_index(instr_index),
-	.beqpc(beqpc),
-	.jalpc(jalpc)
+	.pcadd       (nextpc      ),
+	.offset      (imm         ),
+	.zero        (zero        ),
+	.instr_index (instr_index ),
+	.beqpc       (beqpc       ),
+	.bnepc       (bnepc       ),
+	.jalpc       (jalpc       )
 );
+
 GenNextPC GenNextPC(
 	.in0(nextpc),
 	.in1(beqpc),
-	.in2(jalpc),
-	.in3(rf_rdata1),
+	.in2(bnepc),
+	.in3(jalpc),
+	.in4(rf_rdata1),
 	.sel_nextpc(sel_nextpc),
 	.PCsrc(PC_src)
-);
-GenBeqBne GenBeqBne(
-	.rdata1(rf_rdata1),
-	.rdata2(rf_rdata2),
-	.sel_beqbne(sel_beqbne),
-	.beq_bne_jump(beq_bne_jump)
 );
 Addr_transform Addr_transform_1(
 	.tran_in(PC_out),
@@ -130,22 +125,22 @@ Instruct_Split Instruct_Split(
 	.instr_index(instr_index)
 );
 ControlUnit ControlUnit(
-	.op(op),
-	.sa(sa),
-	.func(func),
-	.inst_ram_en(inst_ram_en),
-	.inst_ram_wen(inst_ram_wen),
-	.sel_alu_src1(sel_alu_src1),
-	.sel_alu_src2(sel_alu_src2),
-	.alu_op(alu_op),
-	.data_ram_en(data_ram_en),
-	.data_ram_wen(data_ram_wen),
-	.rf_we(rf_we),
-	.sel_rf_dst(sel_rf_dst),
-	.sel_rf_res(sel_rf_res),
-	.sel_nextpc(sel_nextpc),
-	.sel_beqbne(sel_beqbne)
+	.op           (op           ),
+	.sa           (sa           ),
+	.func         (func         ),
+	.inst_ram_en  (inst_ram_en  ),
+	.inst_ram_wen (inst_ram_wen ),
+	.sel_alu_src1 (sel_alu_src1 ),
+	.sel_alu_src2 (sel_alu_src2 ),
+	.alu_op       (alu_op       ),
+	.data_ram_en  (data_ram_en  ),
+	.data_ram_wen (data_ram_wen ),
+	.rf_we        (rf_we        ),
+	.sel_rf_dst   (sel_rf_dst   ),
+	.sel_rf_res   (sel_rf_res   ),
+	.sel_nextpc   (sel_nextpc   )
 );
+
 Addr_transform Addr_transform_2(
 	.tran_in(alu_result),
 	.tran_out(dr_addr)
@@ -219,7 +214,8 @@ ALU ALU(
 	.alu_control(alu_op),
 	.alu_src1(alu_src1),
 	.alu_src2(alu_src2),
-	.alu_result(alu_result)
+	.alu_result(alu_result),
+	.zero(zero)
 );
 RegFile RegFile(
 	.CLK(CLK),

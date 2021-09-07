@@ -15,15 +15,8 @@ module ControlUnit(
 	output            rf_we, //寄存器堆写使能
 	output  [ 2:0]    sel_rf_dst, //寄存器堆写地址生成逻辑
 	output            sel_rf_res, //寄存器堆读地址生成逻辑
-	output  [ 3:0]    sel_nextpc, //pc输入生成逻辑
-	output  [ 1:0]    sel_beqbne //选择BEQ BNE
+	output  [ 4:0]    sel_nextpc //pc输入生成逻辑
 );
-/*
-op对应指令
-000000 ADDU ADD SUB SLT SLTU AND
-001001 ADDIU
-001010 SLTI
-*/
 wire inst_addu;
 wire inst_addiu;
 wire inst_subu;
@@ -71,19 +64,21 @@ assign inst_mul = (op == 6'b011100) && (func == 6'b000010);
 assign inst_ram_en = 1;
 assign inst_ram_wen = 1;
 assign sel_nextpc = {inst_jr,
-					 inst_jal, inst_bne | inst_beq,
-	                 inst_addu | inst_addiu | inst_subu | inst_lw | inst_sw | 
-	                 inst_slt | inst_sltu | inst_sll | inst_srl | inst_sra | inst_lui | 
-	                 inst_and | inst_or | inst_xor | inst_nor | inst_ori | inst_mul};
+					 inst_jal,
+					 inst_bne,
+					 inst_beq,
+	                 ~(inst_jr | inst_jal | inst_bne | inst_beq)};
 assign sel_alu_src1 = {inst_sll | inst_srl | inst_sra,
 	                   inst_jal,
 	                   inst_addu | inst_addiu | inst_subu | inst_lw | inst_sw |
-					   inst_slt | inst_sltu | inst_and | inst_or | inst_xor | inst_ori  | inst_nor | inst_mul};
+					   inst_slt | inst_sltu | inst_and | inst_or | inst_xor | inst_ori  | inst_nor | inst_mul |
+					   inst_beq | inst_bne};
 assign sel_alu_src2 = {inst_ori,
 					   inst_jal,
                        inst_addiu | inst_lw | inst_sw | inst_lui,
 					   inst_addu | inst_subu | inst_slt | inst_sltu | inst_sll | 
-                       inst_srl | inst_sra | inst_and | inst_or | inst_xor | inst_nor | inst_mul};
+                       inst_srl | inst_sra | inst_and | inst_or | inst_xor | inst_nor | inst_mul|
+					   inst_beq | inst_bne};
 assign data_ram_en = inst_lw | inst_sw;
 assign data_ram_wen = inst_sw;
 assign rf_we = inst_addu | inst_addiu | inst_subu | inst_lw | inst_sltu | inst_slt | inst_sll | inst_srl
@@ -94,8 +89,7 @@ assign sel_rf_dst = {inst_jal,
                     | inst_srl | inst_sra | inst_and | inst_or | inst_xor | inst_nor | inst_mul};
 assign sel_rf_res = inst_lw;
 assign alu_op = {inst_mul, inst_lui, inst_sra, inst_srl, inst_sll, inst_xor, inst_or | inst_ori, inst_nor,
-	             inst_and, inst_sltu, inst_slt, inst_subu, inst_addu | inst_addiu |
+	             inst_and, inst_sltu, inst_slt, inst_subu | inst_beq | inst_bne, inst_addu | inst_addiu |
 	             inst_lw | inst_sw | inst_jal};
-assign sel_beqbne = {inst_bne, inst_beq};
 
 endmodule

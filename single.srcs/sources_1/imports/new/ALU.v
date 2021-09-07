@@ -5,7 +5,8 @@ module ALU(
 	input 	[12:0] alu_control,
 	input 	[31:0] alu_src1,
 	input 	[31:0] alu_src2,
-	output	[31:0] alu_result
+	output	[31:0] alu_result,
+	output         zero
 );
 
 wire op_add;	//加法操作
@@ -101,5 +102,6 @@ assign  alu_result = ({32{op_add|op_sub	}} & add_sub_result)
 				   | ({32{op_sra		}} & sra_result)
 				   | ({32{op_lui		}} & lui_result)
 				   | ({32{op_mul        }} & mul_result);
+assign zero = (alu_result == 32'd0);
 
 endmodule

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="DR_synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1630925254">
-  <File Type="RDS-PROPCONSTRS" Name="DR_drc_synth.rpt"/>
   <File Type="PA-TCL" Name="DR.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="DR_drc_synth.rpt"/>
   <File Type="RDS-RDS" Name="DR.vds"/>
   <File Type="RDS-UTIL" Name="DR_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="DR_utilization_synth.pb"/>
@@ -35,9 +35,7 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2016">
-      <Desc>Vivado Synthesis Defaults</Desc>
-    </StratHandle>
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2016"/>
     <Step Id="synth_design"/>
   </Strategy>
 </GenRun>

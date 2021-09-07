@@ -13,10 +13,6 @@ module RegFile(
 	);
 
 reg [31:0] reg_array[31:0]; //32个32位宽的数据
-// //加载数据到存储器，必须使用绝对路径
-// initial begin
-// 	$readmemh("D:/Codes/Verilog/Single_CPU/rtl/RegFile.txt", reg_array);
-// end
 //Write
 always@(posedge CLK) begin
 	if(we) reg_array[waddr] <= wdata;
